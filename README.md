@@ -31,3 +31,22 @@ Hole die aktuelle Belegung der Festplattengruppen
 
 Zeige mir den Status des ersten Global Mirrors an: 
 > 192.168.0.1 22 %linuxuser %linuxpassword "lsrcrelationshipprogress rcrel0"
+
+
+<br><br>
+
+Aktuelle Exe Files findet man unter den Relases https://github.com/BenediktS/PRTG_IBMStorwizeSensor/releases
+
+<br>
+
+<br>
+
+### Compilieren des Projekts.
+
+Zum kompilieren des Projekts benötigt man in der aktuellen Version die SSH Komponenten von Devart.
+(Diese kann man hier kaufen : https://www.devart.com/sbridge/)
+
+Diese Komponenten werden für die Unit uDevartSSHConnector.pas benötigt. 
+Ich habe bisher keine SSH Shell implementierung von Embarcadero selber gefunden. 
+Nehme aber gerne Hinweise darauf an :) 
+
