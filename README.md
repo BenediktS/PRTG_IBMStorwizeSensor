@@ -21,7 +21,7 @@ Optional kann man dem Programm sagen, dass es nur bestimmte Feldnummern als Sens
 
 #### Parameter Anwendungbeispiele (getestet an einem Storwize 3700 Systems)
 (Die IP muss natürlich durch die IP des Storwize Systems ersetzt werden)
-
+<br><br>
 Hole alle aktuellen Statistikdaten des Systems 
 > 192.168.0.1 22 %linuxuser %linuxpassword lssystemstats 1 
 
