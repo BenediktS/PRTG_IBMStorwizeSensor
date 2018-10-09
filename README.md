@@ -8,11 +8,13 @@ Da ich keine Dokumentation gefunden habe, wie man ein echtes Plugin schreiben ka
 <p>
 Die Exe benötigt mindestens 5 Parameter.</br>
 </br>
-> StorwizeSensor.exe <host> <port> <username> <password> <IBMCommand></br>
+> StorwizeSensor.exe < host > < port > < username > < password > < IBMCommand > </br>
 </br>  
 Optional kann man dem Programm sagen, dass es nur bestimmte Feldnummern als Sensoren zurück geben soll.</br>
 </br>
-` StorwizeSensor.exe <host> <port> <username> <password> <IBMCommand> <optional: 1..n : FieldNrs that should be returned> `</br>
+```
+StorwizeSensor.exe < host > < port > < username > < password > < IBMCommand > < optional: 1..n : FieldNrs that should be returned > </br> 
+```
 </br>
 </p>
 
