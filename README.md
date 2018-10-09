@@ -26,7 +26,7 @@ Hole alle aktuellen Statistikdaten des Systems
 Hole die aktuelle Belegung der Festplattengruppen 
 > 192.168.0.1 22 %linuxuser %linuxpassword "lsmdiskgrp -bytes" 5 7 9 10 
 
-Zeige mir den Status der Global Mirrors an: 
+Zeige mir den Status des ersten Global Mirrors an: 
 > 192.168.0.1 22 %linuxuser %linuxpassword "lsrcrelationshipprogress rcrel0"
 
 
