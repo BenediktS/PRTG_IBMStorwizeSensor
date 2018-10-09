@@ -5,6 +5,7 @@ Das Programm verbidnet sich von einem Windowsserver per ssh mit einem IBM Storwi
 
 Da ich keine Dokumentation gefunden habe, wie man ein echtes Plugin schreiben kann, habe ich nur einen "Advanced EXE/Script Sensor" geschrieben. Diesen muss man auf einen der Windows Probe Server kopieren und dann die benötigten Infos per Parameter übergeben. 
 
+
 <br>
 
 Die Exe benötigt mindestens 5 Parameter.
@@ -18,7 +19,8 @@ Optional kann man dem Programm sagen, dass es nur bestimmte Feldnummern als Sens
 <br><br>
 
 
-#### Parameter Anwendungbeispiele (Die IP muss natürlich durch die IP des Storwize Systems ersetzt werden): 
+#### Parameter Anwendungbeispiele (getestet an einem Storwize 3700 Systems)
+(Die IP muss natürlich durch die IP des Storwize Systems ersetzt werden)
 
 Hole alle aktuellen Statistikdaten des Systems 
 > 192.168.0.1 22 %linuxuser %linuxpassword lssystemstats 1 
@@ -28,5 +30,3 @@ Hole die aktuelle Belegung der Festplattengruppen
 
 Zeige mir den Status des ersten Global Mirrors an: 
 > 192.168.0.1 22 %linuxuser %linuxpassword "lsrcrelationshipprogress rcrel0"
-
-
