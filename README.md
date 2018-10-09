@@ -35,7 +35,7 @@ Zeige mir den Status des ersten Global Mirrors an:
 
 <br><br>
 
-Aktuelle Exe Files findet man unter den Relases https://github.com/BenediktS/PRTG_IBMStorwizeSensor/releases
+Aktuelle Exe-Files findet man unter den Releases https://github.com/BenediktS/PRTG_IBMStorwizeSensor/releases
 
 <br>
 
