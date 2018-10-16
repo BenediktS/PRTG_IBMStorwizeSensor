@@ -1,7 +1,7 @@
 [Deutsche Anleitung](#Anleitung_Deutsch)
 # PRTG_IBMStorwizeSensor  
 
-The Storwize systems don't export statistic data via SNMP. This program tries to get the statistic data from a Storwize system into the PRTG server. The program will be installed on a windows probe server, and will extract the data from the Storewize system via ssh. (So the ssh service has to run on the Storewize system. By default it is running)
+The Storwize systems don't export statistic data via SNMP. This program tries to get the statistic data from a Storwize system into the PRTG server. The program will be installed on a windows probe server, and will extract the data from the Storwize system via ssh. (So the ssh service has to run on the Storwize system. By default it is running)
 
 You have to follow the installation instructions for a "Advanced EXE/Script Sensor" on a windows probe server. 
 
@@ -78,7 +78,7 @@ Optional kann man dem Programm sagen, dass es nur bestimmte Feldnummern als Sens
 <br><br>
 
 
-#### Parameter Anwendungbeispiele (getestet an einem Storwize 3700 Systems)
+#### Parameter Anwendungbeispiele (getestet an einem Storwize 3700 System)
 (Die IP muss natürlich durch die IP des Storwize Systems ersetzt werden)
 <br><br>
 
