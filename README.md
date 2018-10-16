@@ -44,11 +44,9 @@ Precompiled exe files are released here: https://github.com/BenediktS/PRTG_IBMSt
 
 To compile the project, you need the SSH Components from Devart. ( https://www.devart.com/sbridge/ )
 
-This components are only used in the uDevartSSHConnector.pas. 
-I didn't found a ssh shell from embarcadero itself. I would be pleased to hear from you, that i am wrong. 
-
-
-<br>
+This components are only used in the uDevartSSHConnector.pas. <br>
+I couldn't find a ssh shell from delphi itself. <br>
+I would be pleased to hear from you, that i am wrong. <br>
 
 <br>
 
