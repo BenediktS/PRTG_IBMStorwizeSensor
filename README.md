@@ -1,4 +1,4 @@
-[Deutsche Anleitung](#Anleitung_Deutsch)
+[Deutsche Anleitung](#prtg_ibmstorwizesensor-1)
 # PRTG_IBMStorwizeSensor  
 
 The Storwize systems don't export statistic data via SNMP. This program tries to get the statistic data from a Storwize system into the PRTG server. The program will be installed on a windows probe server, and will extract the data from the Storwize system via ssh. (So the ssh service has to run on the Storwize system. By default it is running)
