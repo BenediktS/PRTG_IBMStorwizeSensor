@@ -2,7 +2,8 @@ unit uDevartSSHConnector;
 
 interface
 
-uses uISSHConnector, ScSSHClient, ScSSHUtils, ScSSHChannel, ScBridge;
+uses uISSHConnector, ScSSHClient, ScSSHUtils, ScSSHChannel, ScBridge, Types,
+     SysUtils;
 
   type TDevartSSHConnector = class(TInterfacedObject, ISSHConnector)
   private
@@ -10,9 +11,10 @@ uses uISSHConnector, ScSSHClient, ScSSHUtils, ScSSHChannel, ScBridge;
     ScSSHClient: TScSSHClient;
     ScMemoryStorage: TScMemoryStorage;
     procedure ScSSHClient1ServerKeyValidate(Sender: TObject; NewServerKey: TScKey; var Accept: Boolean);
+    procedure OnAuth(Sender: TObject; const Name, Instruction: string; const Prompts: TStringDynArray; var Responses: TStringDynArray);
   public
     function ExecuteCommand(aCommand : string) : string;
-    constructor Create(const host: string; const port: integer;  const username, password : string); reintroduce;
+    constructor Create(const host: string; const port: integer;  const username, password : string; UseKeyBoardInteractive : boolean = false); reintroduce;
     destructor Destroy; override;
   end;
 
@@ -20,19 +22,36 @@ implementation
 
 { uDevartSSHConnector }
 
-constructor TDevartSSHConnector.create(const host: string; const port: integer;  const username, password : string);
+procedure TDevartSSHConnector.OnAuth(Sender: TObject; const Name, Instruction: string; const Prompts: TStringDynArray; var Responses: TStringDynArray);
+var
+  i : integer;
+begin
+  for i := 0 to High(Prompts) do
+  begin
+    if Prompts[i].toLower.trim = 'password:' then Responses[0] := ScSSHClient.Password;
+  end;
+
+end;
+
+constructor TDevartSSHConnector.create(const host: string; const port: integer;  const username, password : string; UseKeyBoardInteractive : boolean = false);
+var
+  s : string;
 begin
   ScMemoryStorage := TScMemoryStorage.Create(nil);
-  ScSSHClient := TScSSHClient.Create(nil);
-  ScSSHShell := TScSSHShell.Create(nil);
 
+  ScSSHClient := TScSSHClient.Create(nil);
   ScSSHClient.OnServerKeyValidate := ScSSHClient1ServerKeyValidate;
+  ScSSHClient.OnAuthenticationPrompt := OnAuth;
   ScSSHClient.KeyStorage := ScMemoryStorage;
   ScSSHClient.HostName := host;
   ScSSHClient.Port := port;
   ScSSHClient.User := username;
   ScSSHClient.Password := password;
+  if UseKeyBoardInteractive then
+    ScSSHClient.Authentication := atKeyboardInteractive;
 
+  ScSSHShell := TScSSHShell.Create(nil);
+  ScSSHShell.UseUnicode := True;
   ScSSHShell.Client := ScSSHClient;
 
 end;
