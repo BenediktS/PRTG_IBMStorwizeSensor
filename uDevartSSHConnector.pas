@@ -34,8 +34,6 @@ begin
 end;
 
 constructor TDevartSSHConnector.create(const host: string; const port: integer;  const username, password : string; UseKeyBoardInteractive : boolean = false);
-var
-  s : string;
 begin
   ScMemoryStorage := TScMemoryStorage.Create(nil);
 
@@ -53,7 +51,6 @@ begin
   ScSSHShell := TScSSHShell.Create(nil);
   ScSSHShell.UseUnicode := True;
   ScSSHShell.Client := ScSSHClient;
-
 end;
 
 destructor TDevartSSHConnector.Destroy;
