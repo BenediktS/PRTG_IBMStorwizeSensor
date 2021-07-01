@@ -20,6 +20,7 @@ uses uISSHConnector, ScSSHClient, ScSFTPClient, ScSSHUtils, ScSSHChannel, ScBrid
     constructor Create(const host: string; const port: integer;  const username, password : string; UseKeyBoardInteractive : boolean = false); reintroduce;
     destructor Destroy; override;
     procedure DownloadFileToStream(const SourceName:string; destination : TStream; FileOffset : Int64 = 0);
+    procedure UploadFileFromStream(aStream : TStream; aDestName : string );
   end;
 
 implementation
@@ -100,6 +101,15 @@ procedure TDevartSSHConnector.ScSSHClient1ServerKeyValidate(Sender: TObject;
   NewServerKey: TScKey; var Accept: Boolean);
 begin
   Accept := True;
+end;
+
+procedure TDevartSSHConnector.UploadFileFromStream(aStream: TStream;
+  aDestName: string);
+begin
+  if not SFTPClient.Active
+    then SFTPClient.Initialize;
+
+  SFTPClient.UploadFromStream(aStream, aDestName, True, 0);
 end;
 
 end.
